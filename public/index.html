@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPA de Gestion des Tâches</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   
+    <!-- Inclure ici le CSS et le JavaScript nécessaire -->
+</head>
+<body>
+    <div>
+        <h1>Gestion des Utilisateurs</h1>
+        <div id="signup-form">
+            <input type="text" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Mot de passe" required>
+            <button onclick="signup()">Inscription</button>
+          </div>
+        
+          <!-- Formulaire de connexion -->
+          <div id="login-form">
+            <input type="text" id="login-email" placeholder="Email" required>
+            <input type="password" id="login-password" placeholder="Mot de passe" required>
+            <button onclick="login()">Connexion</button>
+          </div>
+          <!-- Formulaire de modification -->
+          <div id="update-form">
+            <input type="text" id="update-id" placeholder="ID utilisateur" required>
+            <input type="password" id="update-password" placeholder="Nouveau Mot de passe" required>
+            <select id="update-role-select" name="role">
+                <option value="utilisateur" <%= user.role === "utilisateur" ? 'selected' : '' %>>utilisateur</option>
+                <option value="admin" <%= user.role === "admin" ? 'selected' : '' %>>admin</option>
+            </select>
+            <button onclick="updateUser()">Mettre à Jour</button>
+          </div>
+    </div>
+    <!-- auteur  -->
+  
+    <div id="app">
+        <h1>Gestion des Auteur</h1>
+        <div id="auteur-list"></div>
+        <form id="auteur-form">
+            <input type="text" id="auteur-nom" placeholder="Nom de l'Auteur" required>
+            <input type="text" id="auteur-biographie" placeholder="Biographie de l'Auteur" required>
+            <button type="submit">Ajouter Auteur</button>
+        </form>
+    </div>
+
+
+    
+    <div id="appLivre">
+        <h1>Gestion des Livre</h1>
+        <div id="livre-list"></div>
+        <form id="livre-form">
+            <input type="text" id="livre-title" placeholder="Titke du livre" required>
+            <input type="text" id="livre-annee" placeholder="Annee du livre" required>
+            <input type="text" id="livre-auteur" placeholder="Auteur du livre" required>
+            <input type="text" id="livre-genre" placeholder="Genre du livre" required>
+            <button type="submit">Ajouter Auteur</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/public/js/main.js"></script>
+</body>
+</html>
